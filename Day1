@@ -3,3 +3,9 @@ class Main {
         System.out.print("cse \"KARE\" students");
     }
 }
+
+class Main {
+    public static void main(String args[]) {
+        System.out.print("\\n");
+    }
+}
