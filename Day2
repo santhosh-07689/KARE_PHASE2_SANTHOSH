@@ -1,3 +1,4 @@
+#1 if programs
 class Main  {
     public static void main(String[] args) {
         if (true)
@@ -6,3 +7,75 @@ else
 System.out.print("hello");
 }
 }
+
+#2
+class Main  {
+    public static void main(String[] args) {
+        int a = 3;
+        if (a==4)
+        System.out.print(a+5);
+        else
+        System.out.print(a-8);
+}
+}
+
+#3
+class Main  {
+    public static void main(String[] args) {
+        if(!true)
+        System.out.print(2+3*5);
+        else
+        System.out.print(5*6/2+10);
+}
+}
+
+#4
+class Main  {
+    public static void main(String[] args) {
+        if(2+2==4)
+        System.out.print("Welcome");
+        System.out.print("Update your details");
+        else
+        System.out.print("Thank you");
+}
+}
+
+#5 Unary programs
+class Main  {
+    public static void main(String[] args) {
+       int a=11;
+       int b=a--;
+       int x=40;
+       int y=x++;
+       System.out.print(a+ " "+b+" "+x+""+y);
+}
+}
+
+#6
+class Main  {
+    public static void main(String[] args) {
+       int a=29;
+       int b=a++;
+       int c=--b;
+       int d=c++;
+       int e=++d;
+       System.out.print(a+ " "+b+" "+c+" "+d+" "+e);
+}
+}
+
+#7
+class Main  {
+    public static void main(String[] args) {
+       int a=99;
+       int b=a++;
+       int c=b--;
+       int d=--c;
+       int e=d++;
+       int f=e--;
+       System.out.println(f++);
+       System.out.println(a+ " "+b+" "+c+" "+d+" "+e+ " "+f+" ");
+       
+}
+}
+
+#8
