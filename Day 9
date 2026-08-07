@@ -105,3 +105,17 @@ class Main {
         System.out.print(c);
     }
 }
+
+#5// to print the no of words in the given String
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner obj=new Scanner(System.in);
+        String s=obj.nextLine();
+        int c=1;
+        for(char ch:s.toCharArray())
+        if(ch== ' ')
+        c++;
+        System.out.print(c);
+    }
+}
