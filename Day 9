@@ -133,3 +133,24 @@ class Main {
         System.out.print("Total Number of vowels: "+c);
     }
 }
+
+#6 reverse string
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner obj=new Scanner(System.in);
+        String str =obj.nextLine();
+        char ch[] = str.toCharArray();
+        int s=0;
+        int e=ch.length-1;
+        while(s<e) {
+            char temp = ch[s];
+            ch[s] = ch[e];
+            ch[e] = temp;
+            s++;
+            e--;
+        }
+        System.out.println(new String(ch));
+    }
+}
+        
