@@ -1,0 +1,339 @@
+
+1 2 3 4 5 -1
+1 2 3 4 5 
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.display();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void display(){
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node temp=first;
+	    while(temp!=null){
+	        System.out.print(temp.data + " ");
+	        temp=temp.next;
+	    }
+	}
+}
+
+1 2 3 4 5 -1
+1 2 3 4 5 
+Sum of elements: 15
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.display();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void display(){
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node temp=first;
+	    int sum=0;
+	    while(temp!=null){
+	       sum=sum+temp.data;
+	       System.out.print(temp.data + " ");
+	       temp=temp.next;
+	    }
+	    System.out.print("\nSum of elements: "+sum);
+	}
+}
+
+
+1 2 4 5 6 -1
+Maximum Element  6
+import java.util.*;
+
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.maxele();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void maxele(){
+	    int max=Integer.MIN_VALUE;
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node temp=first;
+	    while(temp!=null){
+	      if(temp.data>max)
+	        max=temp.data;
+	        temp=temp.next;
+	    }
+	    System.out.print("Maximum Element  "+max);
+	}
+}
+
+1  3  4 6 -1
+Minimum Element  1
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.minimum();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void minimum(){
+	    int min=Integer.MAX_VALUE;
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node temp=first;
+	    while(temp!=null){
+	      if(temp.data<min)
+	        min=temp.data;
+	        temp=temp.next;
+	    }
+	    System.out.print("Minimum Element  "+min);  
+	}
+}
+
+1 2 3 6 7 -1
+6
+Element found
+
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.searching();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void searching(){
+	    Scanner obj = new Scanner(System.in);
+	    int s=obj.nextInt();
+	    int flag=0;
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node temp=first;
+	    while(temp!=null){
+	      if(s==temp.data){
+	          flag=1;
+	          System.out.println("Element found");
+	          break;}
+	        temp=temp.next;
+	    }
+	    if(flag==0)
+	    System.out.print("Element not found ");  
+	}
+}
+
+
+1 2 3 670 23 2 -1
+1 2 2 3 23 670 
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    Node(int d){
+        this.data=d;
+        this.next=null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj=new Scanner(System.in);
+		Main m=new Main();
+		int d=obj.nextInt();
+		while(d!=-1){
+		    m.insert(d);
+		    d=obj.nextInt();
+		}
+		m.sort();
+		m.display();
+	}
+	Node first;
+	void insert(int d){
+	      Node n =new Node(d);
+	      if(first==null){
+	      first=n;
+	      return;
+	      }else{
+	          Node temp = first;
+	          while(temp.next !=null){
+	              temp=temp.next;
+	          }
+	          temp.next=n;
+	      }
+	}
+	void sort(){
+	    if(first==null){
+	        System.out.println("List is empty");
+	        return;
+	    }
+	    Node i=first;
+	    while(i!=null){
+	        Node j=i.next;
+	        while(j !=null){
+	            if(i.data>j.data){
+	                int temp=i.data;
+	                i.data=j.data;
+	                j.data=temp;
+	            }
+	            j=j.next;
+	        }
+	        i=i.next;
+	    }
+	}
+	void display(){
+	    Node temp=first;
+	    while(temp!=null){
+	        System.out.print(temp.data+" ");
+	        temp = temp.next;
+	    }
+	}
+}
