@@ -1,0 +1,230 @@
+OUTPUT
+
+5
+*****
+*   *
+*   *
+*   *
+*****
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if(row==0 || col==0 ||col==n-1 || row ==n-1 ){
+		            System.out.print("*");
+		        }else{
+		            System.out.print(" ");
+	    	}
+		}
+		
+	}
+}
+}
+
+output
+5
+ * * * * * 
+  * * * * 
+   * * * 
+    * * 
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int row,col;
+		for(row=0;row<n-1;row++,System.out.println()){
+	        for(col=0;col<=row;col++)
+	            System.out.print(" ");
+	       for(col=0;col<n-row;col++)
+	            System.out.print("* ");
+		}
+		for(row=0;row<n;row++,System.out.println()){
+		     for(col=0;col<n-row;col++)
+	            System.out.print(" ");
+	       for(col=0;col<=row;col++)
+	            System.out.print("* ");
+		}
+	}
+}
+
+//OUTPUT
+//5
+// 10101
+// 01010
+// 10101
+// 01010
+// 10101
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int row,col;
+		for(row=0; row<n; row++,System.out.println()) {
+		    for(col=0; col<n; col++){
+		        if((row+col)%2==0 )
+		        System.out.print("1");
+		    else//else if ((row+col)%2!=0)
+		        System.out.print("0");
+		    }
+		}
+	}
+}
+
+//OUTPUT
+5
+*****
+** **
+* * *
+** **
+*****
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if(row==0 || col==0 ||col==n-1 || row ==n-1 || row==col || row+col == n-1 ){
+		            System.out.print("*");
+		        }else{  
+		            System.out.print(" ");
+	    	}
+		  }
+        }
+    }
+}
+
+//OUTPUT
+5
+CCCCC
+C    
+C    
+C    
+CCCCC
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if(row==0 || col == 0 || row ==n-1 )
+		            System.out.print("C");
+		        else
+		            System.out.print(" ");
+		    }
+		}
+	}
+}
+
+//OUTPUT
+5
+EEEEE
+E    
+EEEEE
+E    
+EEEEE
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if(row==0 || col == 0 || row ==n-1 || row%2==0)
+		            System.out.print("E");
+		        else
+		            System.out.print(" ");
+		    }
+		}
+	}
+}
+
+
+//output
+5
+N   N
+NN  N
+N N N
+N  NN
+N   N
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if(col==0 || col ==n-1 || row==col)
+		            System.out.print("N");
+		        else
+		            System.out.print(" ");
+		    }
+		}
+	}
+}
+
+//output
+5
+M   M
+MM MM
+M M M
+M   M
+M   M
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        if((col==0 || col ==n-1  ) || (row==col && row<=n/2 ) || (row+col)==n-1 && row<=n/2)
+				// if(col==0 | col==n-1 || row==col && row<=n/2 || (row+col)==n-1 && row<=n/2)
+		            System.out.print("M");
+		        else
+		            System.out.print(" ");
+		    }
+		}
+	}
+}
+
+
+
+
