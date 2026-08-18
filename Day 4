@@ -1,0 +1,533 @@
+//BASE 1 PATTERN
+// * * * * *
+// * * * * *
+// * * * * *
+// * * * * *
+// * * * * *
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n;col++){
+		        System.out.print("*");
+		    }
+		}
+	}
+}
+
+//BASE 2 PATTERN
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<=row;col++){
+		        System.out.print("*");
+		    }
+		}
+	}
+}
+
+//BASE 3 PATTERN (54321)
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+//BASE 4 PATTERN (01357)
+//OUTPUT
+
+// *
+// * * *
+// * * * * *
+// * * * * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<2*row-1;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+
+// COMBINATION OF BASE 1 AND 3 
+// 2 COMBOOS SO WE TAKE 2 FOR LOOPS IN MAIN FOR LOOP
+// FIRST IT IS BASE 3 . SO WE GIVE BASE 3 CONDITION AFTER BASE 1 CONDITION
+//OUTPUT
+//        * * * * *
+//      * * * * *
+//    * * * * *
+//  * * * * *
+//* * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n;col++)
+		        System.out.print("*");
+		    
+		}
+	}
+}
+// COMBINATION OF BASE 1 AND 2
+// 2 COMBOOS SO WE TAKE 2 FOR LOOPS IN MAIN FOR LOOP
+// FIRST IT IS BASE 2 . SO WE GIVE BASE 2 CONDITION AFTER BASE 1 CONDITION
+//output
+// * * * * *
+//   * * * * *
+//     * * * * *
+//       * * * * *
+//         * * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<=row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+// COMBINATION OF BASE 2 , 3,  2
+// 3 COMBOOS SO WE TAKE 3 FOR LOOPS IN MAIN FOR LOOP
+// FIRST IT IS BASE 2 . SO WE GIVE BASE 2 CONDITION AFTER BASE 3 CONDITION AGAIN AFTER BASE 2
+//OUTPUT
+// *         *
+// * *       * *
+// * * *     * * *
+// * * * *   * * * *
+// * * * * * * * * * *
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		   
+		}
+	}
+}
+
+// COMBINATION OF BASE 2 , 3,3,  2
+// 4 COMBOOS SO WE TAKE 4 FOR LOOPS IN MAIN FOR LOOP
+// FIRST IT IS BASE 2 . SO WE GIVE BASE 2 CONDITION AFTER BASE 3 CONDITION AGAIN BASE 3 AND AGAIN AFTER BASE 2
+//OUTPUT
+// *                 *
+// * *             * *
+// * * *         * * *
+// * * * *     * * * *
+// * * * * * * * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		   
+		}
+	}
+}
+
+// COMBINATION OF 2 AND 3
+// BUT HERE THERE TOP ONE BASE(2) AND BOTTOM ONE BASE(3) SO WE HAVE TO USE 2 FOR LOOPS FOR "ROW"
+//FIRST ONE IS BASE 2 SO AND NEXT FOR  BASE 3
+//OUTPUT
+//5
+//*
+//**
+//***
+//****
+//*****
+//****
+//***
+//**
+//*
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n-1;row++,System.out.println()){ //BASE 2 - TOP
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		}
+		for(row=0;row<n;row++,System.out.println()){ // BASE 3 -BOTTOM
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+//TOP COMBINATION 2,3,3,2
+//BOTTOM COMBINATION  3,2,2,3
+//OUTPUT
+5
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		for(row=0;row<n-1;row++,System.out.println()){
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		}
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		    for(col=0;col<=row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+//OUTPUT
+//12345
+//12345
+//12345
+//12345
+//12345
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int row,col;
+	    for(row=0;row<n;row++,System.out.println()){
+	        for(col=0;col<n;col++){
+	            System.out.print(col+1);
+	        }
+	    }
+		
+	}
+}
+
+//output
+//11111
+//22222
+//33333
+//44444
+//55555
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int row,col;
+	    for(row=0;row<n;row++,System.out.println()){
+	        for(col=0;col<n;col++){
+	            System.out.print(row+1);
+	        }
+	    }
+		
+	}
+}
+
+//output
+//5
+//1
+//22
+//333
+//4444
+//55555
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int row,col;
+	    for(row=0;row<n;row++,System.out.println()){
+	        for(col=0;col<=row;col++){
+	            System.out.print(row+1);
+	        }
+	    }
+	}
+}
+
+//output
+//5
+//54321
+//5432
+//543
+//54
+//5
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int row,col;
+	    for(row=0;row<n;row++,System.out.println()){
+	        for(col=0;col<n-row;col++){
+	            System.out.print(n-col);
+	        }
+	    }
+	}
+}
+
+//output
+5
+12345
+1234
+123
+12
+1
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int row,col;
+	    
+	    for(row=0;row<n;row++,System.out.println()){
+	        for(col=0;col<n-row;col++){
+	            System.out.print(col+1);
+	        }
+	    }
+	}
+}
+
+//output
+5
+12345
+
+678910
+
+1112131415
+
+1617181920
+
+2122232425
+
+
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+        int count=0;
+		for(row=0; row<5; row++,System.out.println()) {
+			for(col=0; col<n; col++) {
+				count++;
+				System.out.print(count);
+				}
+		}
+	}
+}
+
+//output
+5
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+**********
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc =  new Scanner(System.in);
+		int n =sc.nextInt();
+		int row,col;
+		
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		    for(col=0;col<=row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n-row;col++)
+		        System.out.print("*");
+		}
+		for(row=0;row<n;row++,System.out.println()){
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<n-row-1;col++)
+		        System.out.print(" ");
+		    for(col=0;col<=row;col++)
+		        System.out.print("*");
+		}
+	}
+}
+
+//output
+5
+1
+24
+135
+2468
+13579
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+        int count;
+		for(row=0; row<5; row++,System.out.println()) {
+		    if(row%2==0)
+		        count=1;
+		    else
+		        count=2;
+			for(col=0; col<=row; col++) {
+				System.out.print(count);
+				count+=2;
+				}
+		}
+	}
+}
+
+//output
+5
+*   *
+ * * 
+  *  
+ * * 
+*   *
+
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int row,col;
+		for(row=0; row<n; row++,System.out.println()) {
+		    for(col=0; col<n; col++){
+		        if(row==col || row+col == n-1)
+		        System.out.print("*");
+		    else
+		        System.out.print(" ");
+		    }
+		}
+	}
+}
+
+
+
