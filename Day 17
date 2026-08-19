@@ -1,34 +1,18 @@
-#1 singly linked list
+// 1 sum of elements of circular singly linked List
 import java.util.*;
 
-public class Main {
+class Node {
+    int data;
+    Node next;
 
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Main {
     Node first = null;
-
-    class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        Main m = new Main();
-
-        int d = sc.nextInt();
-
-        while (d != -1) {
-            m.insert(d);
-            d = sc.nextInt();
-        }
-
-        m.display();
-    }
 
     void insert(int d) {
         Node n = new Node(d);
@@ -48,7 +32,9 @@ public class Main {
         }
     }
 
-    void display() {
+    void sum() {
+        int sum = 0;
+
         if (first == null) {
             System.out.println("List is empty");
             return;
@@ -57,12 +43,28 @@ public class Main {
         Node temp = first;
 
         do {
-            System.out.print(temp.data + " ");
+            sum += temp.data;
             temp = temp.next;
         } while (temp != first);
+
+        System.out.println("Sum = " + sum);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.sum();
     }
 }
-// 2 
+// 2 sum of elements of doubly linked List
 import java.util.*;
 
 class Node {
@@ -84,17 +86,108 @@ class Main {
 
         if (first == null) {
             first = n;
-            first.next = first;
-            first.prev = first;
+            n.next = first;
+            n.prev = first;
         } else {
-            Node last = first.prev;
+            Node temp = first;
 
-            last.next = n;
-            n.prev = last;
+            while (temp.next != first) {
+                temp = temp.next;
+            }
 
+            temp.next = n;
+            n.prev = temp;
             n.next = first;
             first.prev = n;
         }
+    }
+
+    void sum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        int sum = 0;
+        Node temp = first;
+
+        do {
+            sum += temp.data;
+            temp = temp.next;
+        } while (temp != first);
+
+        System.out.println("Sum = " + sum);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.sum();
+    }
+}
+
+// 3 sort of circular singly ll 
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } else {
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.next = first;
+        }
+    }
+
+    void sort() {
+        if (first == null)
+            return;
+
+        Node i = first;
+
+        do {
+            Node j = i.next;
+
+            while (j != first) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+                j = j.next;
+            }
+
+            i = i.next;
+        } while (i != first);
     }
 
     void display() {
@@ -109,119 +202,513 @@ class Main {
             System.out.print(temp.data + " ");
             temp = temp.next;
         } while (temp != first);
-
-        System.out.println();
     }
 
     public static void main(String[] args) {
-        Scanner obj = new Scanner(System.in);
-
-        Main n = new Main();
-
-        int d = obj.nextInt();
-
-        while (d != -1) {
-            n.insert(d);
-            d = obj.nextInt();
-        }
-
-        n.display();
-    }
-}
-
-// 3 circular doubly linked list
-import java.util.*;
-class Node{
-    int data;
-    Node next,prev;
-    Node(int d){
-        this.data = d;
-        this.next = null;
-        this.prev = null;
-    }
-}
-class Main{
-    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Main m = new Main();
+
         int d = sc.nextInt();
-        while(d!=1){
+
+        while (d != 1) {
             m.insert(d);
-            d=sc.nextInt();
+            d = sc.nextInt();
         }
+
+        m.sort();
         m.display();
     }
+}
+
+// 4 sort of doubly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        data = d;
+        next = null;
+        prev = null;
+    }
+}
+
+class Main {
     Node first = null;
-    void insert(int d){
+
+    void insert(int d) {
         Node n = new Node(d);
-        if(first==null){
+
+        if (first == null) {
             first = n;
-            n.next=first;
+            n.next = first;
             n.prev = first;
-        }else{
+        } else {
             Node temp = first;
-            while(temp.next != first)
+
+            while (temp.next != first) {
                 temp = temp.next;
+            }
+
             temp.next = n;
             n.prev = temp;
             n.next = first;
             first.prev = n;
         }
     }
-    void display(){
-        if(first == null)
+
+    void sort() {
+        if (first == null)
+            return;
+
+        Node i = first;
+
+        do {
+            Node j = i.next;
+
+            while (j != first) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+
+                j = j.next;
+            }
+
+            i = i.next;
+        } while (i != first);
+    }
+
+    void display() {
+        if (first == null) {
             System.out.println("List is empty");
+            return;
+        }
+
         Node temp = first;
-        do{
+
+        do {
             System.out.print(temp.data + " ");
             temp = temp.next;
-        }while(temp!=first);
+        } while (temp != first);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.sort();
+        m.display();
     }
 }
 
-// 4 circular singly linked list
-//Circular singly Linked List
+
+// 5 maximum element of circular singly linked list
 import java.util.*;
-class Node{
+
+class Node {
     int data;
     Node next;
-    Node(int d){
-        this.data=d;
-        this.next=null;
+
+    Node(int d) {
+        data = d;
+        next = null;
     }
 }
-class Main{
-    public static void main(String[] args){
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } else {
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.next = first;
+        }
+    }
+
+    void maximum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        int max = first.data;
+        Node temp = first.next;
+
+        while (temp != first) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+            temp = temp.next;
+        }
+
+        System.out.println("Maximum = " + max);
+    }
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Main m = new Main();
-        int d=sc.nextInt();
-        while(d!=1){
+
+        int d = sc.nextInt();
+
+        while (d != 1) {
             m.insert(d);
-            d=sc.nextInt();
+            d = sc.nextInt();
         }
+
+        m.maximum();
+    }
+}
+
+// 6 maximum of elements doubly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        data = d;
+        next = null;
+        prev = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } else {
+            Node temp = first;
+
+            while (temp.next != first) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.prev = temp;
+            n.next = first;
+            first.prev = n;
+        }
+    }
+
+    void maximum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        int max = first.data;
+        Node temp = first.next;
+
+        while (temp != first) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+            temp = temp.next;
+        }
+
+        System.out.println("Maximum = " + max);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.maximum();
+    }
+}
+
+// 7 insert elements of singly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+        }
+    }
+
+    void display() {
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
         m.display();
     }
-        Node first=null;
-        void insert(int d){
-            Node n=new Node(d);
-            if(first==null){
-                first = n;
-                n.next=first;
-            }else{
-                Node temp=first;
-                while(temp.next !=first)
-                temp=temp.next;
-                temp.next=n;
-                n.next=first;
-            }
-        }
-        void display(){
-            if(first==null)
-            System.out.print("List is empty");
-            Node temp=first;
-            do{
-                System.out.print(temp.data + " ");
+}
+
+// 8 insert elements of doubly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        data = d;
+        next = null;
+        prev = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+
+            while (temp.next != null) {
                 temp = temp.next;
-            } while(temp !=first);
-        }}
-    
+            }
+
+            temp.next = n;
+            n.prev = temp;
+        }
+    }
+
+    void display() {
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.display();
+    }
+}
+
+// reverse elements of singly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+        }
+    }
+
+    void reverse() {
+        Node prev = null;
+        Node curr = first;
+
+        while (curr != null) {
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        first = prev;
+    }
+
+    void display() {
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.reverse();
+        m.display();
+    }
+}
+
+// 10 reverse elements of doubly linked list
+import java.util.*;
+
+class Node {
+    int data;
+    Node next, prev;
+
+    Node(int d) {
+        data = d;
+        next = null;
+        prev = null;
+    }
+}
+
+class Main {
+    Node first = null;
+
+    void insert(int d) {
+        Node n = new Node(d);
+
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+
+            temp.next = n;
+            n.prev = temp;
+        }
+    }
+
+    void reverse() {
+        Node curr = first;
+        Node temp = null;
+
+        while (curr != null) {
+            temp = curr.prev;
+            curr.prev = curr.next;
+            curr.next = temp;
+
+            curr = curr.prev;
+        }
+
+        if (temp != null) {
+            first = temp.prev;
+        }
+    }
+
+    void display() {
+        Node temp = first;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+
+        int d = sc.nextInt();
+
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+
+        m.reverse();
+        m.display();
+    }
+}
